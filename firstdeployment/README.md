@@ -1,13 +1,42 @@
-# Sample Hardhat Project
+# How this Deployment was created
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, and a script that deploys that contract.
+This tutorial was followed: https://www.web3.university/tracks/create-a-smart-contract/deploy-your-first-smart-contract
 
-Try running some of the following tasks:
+we used sample Hello World smart contract from the Ethereum Foundation 
 
-```shell
-npx hardhat help
-npx hardhat test
-REPORT_GAS=true npx hardhat test
-npx hardhat node
-npx hardhat run scripts/deploy.js
-```
+npm init # (or npm init --yes)
+
+npm install --save-dev hardhat
+
+npx hardhat - creates a new hardhat project
+
+Select “create an empty hardhat.config.js”:
+
+mkdir contracts
+mkdir scripts
+
+npm install dotenv --save
+
+plugin for ether.js   https://hardhat.org/hardhat-runner/plugins/nomicfoundation-hardhat-ethers
+
+npm install --save-dev @nomiclabs/hardhat-ethers "ethers@^5.0.0"
+
+
+compile contract 
+
+npx hardhat compile
+
+npx hardhat run scripts/deploy.js --network goerli
+Contract deployed to address: 0x170D920AD1A97816Af33eFFAa8b27D93F152D118
+
+
+our contract was deployed to https://sepolia.etherscan.io/address/0x170D920AD1A97816Af33eFFAa8b27D93F152D118
+
+npx hardhat run scripts/interact.js
+
+npm install --save-dev @nomiclabs/hardhat-etherscan
+
+npx hardhat verify --network goerli DEPLOYED_CONTRACT_ADDRESS "Hello World!"
+
+
+

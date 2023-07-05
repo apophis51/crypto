@@ -29,3 +29,4 @@ contract HelloWorld {
       emit UpdatedMessages(oldMsg, newMessage);
    }
 }
+
